@@ -388,6 +388,174 @@ img { max-width: 100%; display: block; }
 .cap-card__link:hover { border-color: var(--signal); }
 
 /* ============================================================
+   SALES CONSULTING
+   ============================================================ */
+.sales-consulting {
+  padding: 110px 0 130px;
+  background: var(--ink-soft);
+}
+
+.sales-consulting .section__head { padding-bottom: 44px; }
+.sales-consulting .section__head h2 { max-width: 780px; }
+.sales-consulting__intro {
+  max-width: 700px;
+  margin-top: 16px;
+  color: var(--paper-dim);
+  font-size: 16px;
+}
+
+.sales-tabs {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+  display: grid;
+  grid-template-columns: minmax(250px, 330px) minmax(0, 1fr);
+  align-items: stretch;
+}
+
+.sales-tabs__nav {
+  border: 1px solid var(--ink-line);
+  border-right: 0;
+  background: var(--ink);
+  display: flex;
+  flex-direction: column;
+}
+
+.sales-tab {
+  width: 100%;
+  min-height: 64px;
+  padding: 15px 18px;
+  display: grid;
+  grid-template-columns: 32px minmax(0, 1fr);
+  gap: 10px;
+  align-items: center;
+  text-align: left;
+  border-bottom: 1px solid var(--ink-line);
+  color: var(--paper-dim);
+  transition: background 0.25s var(--ease), color 0.25s var(--ease), box-shadow 0.25s var(--ease);
+}
+
+.sales-tab:last-child { border-bottom: 0; }
+.sales-tab:hover { background: var(--signal-soft); color: var(--paper); }
+.sales-tab:focus-visible { outline: 2px solid var(--signal); outline-offset: -2px; }
+.sales-tab[aria-selected="true"] {
+  background: var(--signal);
+  color: #F7F6F1;
+  box-shadow: inset 4px 0 0 rgba(255,255,255,0.35);
+}
+
+.sales-tab__num {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  opacity: 0.72;
+}
+.sales-tab__title {
+  font-family: var(--font-display);
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+.sales-tabs__content {
+  min-width: 0;
+  border: 1px solid var(--ink-line);
+  background: var(--ink);
+}
+
+.sales-panel { padding: clamp(30px, 5vw, 56px); }
+.sales-panel[hidden] { display: none; }
+.sales-panel__kicker {
+  display: inline-block;
+  margin-bottom: 14px;
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--signal);
+}
+.sales-panel h3 {
+  max-width: 760px;
+  margin-bottom: 14px;
+  font-family: var(--font-display);
+  font-size: clamp(25px, 3.4vw, 38px);
+  line-height: 1.12;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+}
+.sales-panel__lead {
+  max-width: 760px;
+  margin-bottom: 34px;
+  color: var(--paper-dim);
+  font-size: 16px;
+  line-height: 1.65;
+}
+
+.sales-panel__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: 42px;
+  padding-top: 28px;
+  border-top: 1px solid var(--ink-line);
+}
+.sales-panel__label {
+  display: block;
+  margin-bottom: 14px;
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--paper-faint);
+}
+.sales-panel__copy {
+  color: var(--paper-dim);
+  font-size: 14.5px;
+  line-height: 1.65;
+}
+.sales-panel__list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 11px 24px;
+}
+.sales-panel__list li {
+  position: relative;
+  padding-left: 16px;
+  color: var(--paper-dim);
+  font-size: 14px;
+  line-height: 1.45;
+}
+.sales-panel__list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 8px;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--signal);
+}
+.sales-panel__list--single { grid-template-columns: 1fr; }
+.sales-panel__flow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+.sales-panel__flow span {
+  padding: 8px 10px;
+  border: 1px solid var(--signal-soft);
+  background: var(--signal-soft);
+  border-radius: 2px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--signal);
+}
+.sales-panel__flow i {
+  font-style: normal;
+  color: var(--paper-faint);
+}
+
+/* ============================================================
    LEAD QUALIFICATION
    ============================================================ */
 .qual { padding: 20px 0 130px; }
@@ -701,6 +869,8 @@ img { max-width: 100%; display: block; }
    RESPONSIVE
    ============================================================ */
 @media (max-width: 1024px) {
+  .nav__links { gap: 22px; }
+  .nav__link { font-size: 14px; }
   .cap-grid { grid-template-columns: repeat(2, 1fr); }
   .fit__value { grid-template-columns: 1fr 1fr; }
   .fit__value-item:nth-child(2) { border-left: 1px solid var(--ink-line); }
@@ -709,6 +879,23 @@ img { max-width: 100%; display: block; }
 }
 
 @media (max-width: 900px) {
+  .sales-tabs { display: block; }
+  .sales-tabs__nav {
+    flex-direction: row;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scrollbar-width: thin;
+    border-right: 1px solid var(--ink-line);
+    border-bottom: 0;
+  }
+  .sales-tab {
+    flex: 0 0 min(270px, 78vw);
+    border-bottom: 1px solid var(--ink-line);
+    border-right: 1px solid var(--ink-line);
+  }
+  .sales-tab:last-child { border-bottom: 1px solid var(--ink-line); border-right: 0; }
+  .sales-tab[aria-selected="true"] { box-shadow: inset 0 4px 0 rgba(255,255,255,0.35); }
+  .sales-panel__grid { grid-template-columns: 1fr; gap: 30px; }
   .cap-grid { grid-template-columns: 1fr; }
   .how__steps { grid-template-columns: 1fr 1fr; row-gap: 44px; }
   .how__line { display: none; }
@@ -722,6 +909,12 @@ img { max-width: 100%; display: block; }
 }
 
 @media (max-width: 720px) {
+  .sales-consulting { padding: 84px 0 96px; }
+  .sales-consulting .section__head { padding-bottom: 32px; }
+  .sales-tabs { padding: 0 var(--gutter); }
+  .sales-panel { padding: 28px 22px 32px; }
+  .sales-panel__lead { margin-bottom: 26px; }
+  .sales-panel__list { grid-template-columns: 1fr; }
   .nav__mascot { height: 34px; }
   .nav__links {
     position: fixed;
@@ -773,6 +966,7 @@ img { max-width: 100%; display: block; }
 
     <nav class="nav__links" id="navLinks">
       <a href="#capabilities" class="nav__link">Capabilities</a>
+      <a href="#sales-consulting" class="nav__link">Sales Consulting</a>
       <a href="#qualification" class="nav__link">Qualification</a>
       <a href="#how" class="nav__link">How it works</a>
       <a href="#fit" class="nav__link">Who it's for</a>
@@ -907,6 +1101,288 @@ img { max-width: 100%; display: block; }
       <p>Every marketing lead profiled against your criteria before it reaches sales — done
         manually, or automatically through our qualification bot. <a href="#qualification" class="cap-card__link">See how it works ↓</a></p>
     </article>
+  </div>
+</section>
+
+<!-- ================= SALES CONSULTING ================= -->
+<section class="sales-consulting" id="sales-consulting">
+  <div class="section__head reveal">
+    <p class="eyebrow">Sales Consulting</p>
+    <h2>Fix the sales system behind the number.</h2>
+    <p class="sales-consulting__intro">
+      Nine focused consulting engagements spanning organization design, go-to-market, capability,
+      process, account growth, partnerships, and revenue governance.
+    </p>
+  </div>
+
+  <div class="sales-tabs reveal" data-sales-tabs>
+    <div class="sales-tabs__nav" role="tablist" aria-label="Sales consulting services">
+      <button class="sales-tab" id="sales-tab-1" type="button" role="tab" aria-selected="true" aria-controls="sales-panel-1" tabindex="0">
+        <span class="sales-tab__num">01</span><span class="sales-tab__title">Organization &amp; Coverage</span>
+      </button>
+      <button class="sales-tab" id="sales-tab-2" type="button" role="tab" aria-selected="false" aria-controls="sales-panel-2" tabindex="-1">
+        <span class="sales-tab__num">02</span><span class="sales-tab__title">Compensation &amp; Incentives</span>
+      </button>
+      <button class="sales-tab" id="sales-tab-3" type="button" role="tab" aria-selected="false" aria-controls="sales-panel-3" tabindex="-1">
+        <span class="sales-tab__num">03</span><span class="sales-tab__title">GTM &amp; Market Entry</span>
+      </button>
+      <button class="sales-tab" id="sales-tab-4" type="button" role="tab" aria-selected="false" aria-controls="sales-panel-4" tabindex="-1">
+        <span class="sales-tab__num">04</span><span class="sales-tab__title">Market Expansion</span>
+      </button>
+      <button class="sales-tab" id="sales-tab-5" type="button" role="tab" aria-selected="false" aria-controls="sales-panel-5" tabindex="-1">
+        <span class="sales-tab__num">05</span><span class="sales-tab__title">Capability &amp; Team Effectiveness</span>
+      </button>
+      <button class="sales-tab" id="sales-tab-6" type="button" role="tab" aria-selected="false" aria-controls="sales-panel-6" tabindex="-1">
+        <span class="sales-tab__num">06</span><span class="sales-tab__title">Process, CRM &amp; AI</span>
+      </button>
+      <button class="sales-tab" id="sales-tab-7" type="button" role="tab" aria-selected="false" aria-controls="sales-panel-7" tabindex="-1">
+        <span class="sales-tab__num">07</span><span class="sales-tab__title">Strategic Account Growth</span>
+      </button>
+      <button class="sales-tab" id="sales-tab-8" type="button" role="tab" aria-selected="false" aria-controls="sales-panel-8" tabindex="-1">
+        <span class="sales-tab__num">08</span><span class="sales-tab__title">Partnerships &amp; Channels</span>
+      </button>
+      <button class="sales-tab" id="sales-tab-9" type="button" role="tab" aria-selected="false" aria-controls="sales-panel-9" tabindex="-1">
+        <span class="sales-tab__num">09</span><span class="sales-tab__title">Revenue Governance &amp; AOP</span>
+      </button>
+    </div>
+
+    <div class="sales-tabs__content">
+      <article class="sales-panel" id="sales-panel-1" role="tabpanel" aria-labelledby="sales-tab-1" tabindex="0">
+        <span class="sales-panel__kicker">01 / Sales Organization</span>
+        <h3>Sales Organization &amp; Coverage Model Design</h3>
+        <p class="sales-panel__lead">Do we have the right number of salespeople, in the right roles, covering the right customers and markets, with the right reporting structure?</p>
+        <div class="sales-panel__grid">
+          <div>
+            <span class="sales-panel__label">Common symptoms</span>
+            <ul class="sales-panel__list sales-panel__list--single">
+              <li>Territories with very different opportunity sizes</li>
+              <li>Unclear roles between hunters, farmers and key-account managers</li>
+              <li>Overlapping customer ownership</li>
+              <li>Senior salespeople servicing low-value opportunities</li>
+              <li>Inadequate management layers or excessive span of control</li>
+              <li>Incorrect sales capacity and inconsistent regional productivity</li>
+              <li>Poor industry or geographic segmentation</li>
+              <li>Compensation plans reinforcing the wrong behaviours</li>
+            </ul>
+          </div>
+          <div>
+            <span class="sales-panel__label">Deliverables</span>
+            <ul class="sales-panel__list">
+              <li>Current-state Sales Organization Diagnostic</li>
+              <li>Recommended Organization Chart</li>
+              <li>Territory and Account Allocation Model</li>
+              <li>Role Charters</li>
+              <li>Span-of-Control Recommendations</li>
+              <li>Sales Capacity Plan</li>
+              <li>Management Layer Design</li>
+              <li>90/180/365-day Transition Plan</li>
+            </ul>
+          </div>
+        </div>
+      </article>
+
+      <article class="sales-panel" id="sales-panel-2" role="tabpanel" aria-labelledby="sales-tab-2" tabindex="0" hidden>
+        <span class="sales-panel__kicker">02 / Sales Compensation</span>
+        <h3>Sales Compensation &amp; Incentive Framework</h3>
+        <p class="sales-panel__lead">Companies often create incentive schemes around what is easy to measure rather than what actually creates value.</p>
+        <div class="sales-panel__grid">
+          <div>
+            <span class="sales-panel__label">Common symptoms</span>
+            <ul class="sales-panel__list sales-panel__list--single">
+              <li>Salespeople earning incentives despite poor margins</li>
+              <li>Too much focus on acquisition and insufficient retention</li>
+              <li>Salespeople delaying deals to future quarters</li>
+              <li>Managers receiving disproportionately high payouts</li>
+              <li>Excessively complicated schemes employees do not understand</li>
+              <li>Targets disconnected from territory potential</li>
+              <li>No differentiation between new business and renewals</li>
+            </ul>
+          </div>
+          <div>
+            <span class="sales-panel__label">Engagement focus</span>
+            <p class="sales-panel__copy" style="margin-bottom:18px;">Build a compensation system that aligns:</p>
+            <div class="sales-panel__flow" aria-label="Compensation alignment framework">
+              <span>Corporate objectives</span><i>→</i>
+              <span>Sales behaviour</span><i>→</i>
+              <span>Individual performance</span><i>→</i>
+              <span>Rewards</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="sales-panel" id="sales-panel-3" role="tabpanel" aria-labelledby="sales-tab-3" tabindex="0" hidden>
+        <span class="sales-panel__kicker">03 / Go-to-Market</span>
+        <h3>Go-to-Market Strategy &amp; Market Entry</h3>
+        <p class="sales-panel__lead">Core question: How should the company win in this market? Market research determines where to play; GTM determines how to win.</p>
+        <div class="sales-panel__grid">
+          <div>
+            <span class="sales-panel__label">Use case</span>
+            <p class="sales-panel__copy">Define the commercial choices and operating model required to enter a market and convert opportunity into a repeatable revenue motion.</p>
+          </div>
+          <div>
+            <span class="sales-panel__label">Deliverables</span>
+            <ul class="sales-panel__list">
+              <li>Market segmentation</li><li>ICP framework</li>
+              <li>Competitive landscape</li><li>Value proposition</li>
+              <li>Channel strategy</li><li>Sales model</li>
+              <li>Pricing recommendations</li><li>Marketing-sales alignment</li>
+              <li>Sales funnel</li><li>Revenue model</li>
+              <li>12-month GTM roadmap</li>
+            </ul>
+          </div>
+        </div>
+      </article>
+
+      <article class="sales-panel" id="sales-panel-4" role="tabpanel" aria-labelledby="sales-tab-4" tabindex="0" hidden>
+        <span class="sales-panel__kicker">04 / Market Expansion</span>
+        <h3>Domestic &amp; International Market Expansion Assessment</h3>
+        <p class="sales-panel__lead">For companies asking, “We want to expand to X country / Middle East” or “We want to launch in South.”</p>
+        <div class="sales-panel__grid">
+          <div>
+            <span class="sales-panel__label">Use case</span>
+            <p class="sales-panel__copy">Assess market attractiveness, entry choices, partners, economics and risk before committing capital and sales capacity.</p>
+          </div>
+          <div>
+            <span class="sales-panel__label">Deliverables</span>
+            <ul class="sales-panel__list">
+              <li>Country/Region Opportunity Map</li><li>Market Attractiveness Scorecard</li>
+              <li>Competitor Analysis</li><li>Customer Research</li>
+              <li>Entry Mode Recommendation</li><li>Partner Strategy</li>
+              <li>Financial Model</li><li>Risk Analysis</li>
+              <li>Pilot Roadmap</li><li>Board Recommendation</li>
+            </ul>
+          </div>
+        </div>
+      </article>
+
+      <article class="sales-panel" id="sales-panel-5" role="tabpanel" aria-labelledby="sales-tab-5" tabindex="0" hidden>
+        <span class="sales-panel__kicker">05 / Capability &amp; Effectiveness</span>
+        <h3>Sales Capability &amp; Team Effectiveness</h3>
+        <p class="sales-panel__lead">Sales capability linked directly to revenue performance — combining competency mapping and role effectiveness with a 90-day sales effectiveness transformation.</p>
+        <div class="sales-panel__grid">
+          <div>
+            <span class="sales-panel__label">Core question</span>
+            <p class="sales-panel__copy">Does the organization have the selling capabilities required for its strategy?</p>
+          </div>
+          <div>
+            <span class="sales-panel__label">Deliverables</span>
+            <ul class="sales-panel__list">
+              <li>Sales Competency Framework</li><li>Role-wise Competency Matrix</li>
+              <li>Individual Assessment Reports</li><li>Team Heat Map</li>
+              <li>Capability Gap Analysis</li><li>Succession Recommendations</li>
+              <li>Training Needs Analysis</li><li>Hiring Scorecards</li>
+              <li>Capability Diagnostic</li><li>Training Curriculum</li>
+              <li>Sales Playbook</li><li>Manager Coaching Guide</li>
+              <li>Account Planning Templates</li><li>Deal Review Framework</li>
+              <li>90-Day Reinforcement Program</li>
+            </ul>
+          </div>
+        </div>
+      </article>
+
+      <article class="sales-panel" id="sales-panel-6" role="tabpanel" aria-labelledby="sales-tab-6" tabindex="0" hidden>
+        <span class="sales-panel__kicker">06 / Process, CRM &amp; AI</span>
+        <h3>Sales Process Excellence, CRM &amp; AI Enablement</h3>
+        <p class="sales-panel__lead">The CRM exists, but sellers still manage business on Excel or WhatsApp, forecasts remain inaccurate, and AI experimentation is fragmented.</p>
+        <div class="sales-panel__grid">
+          <div>
+            <span class="sales-panel__label">Common symptoms</span>
+            <ul class="sales-panel__list sales-panel__list--single">
+              <li>Managers chase reports</li>
+              <li>Salespeople spend too much time on administration</li>
+              <li>Forecasts are inaccurate</li>
+              <li>CRM adoption is weak</li>
+              <li>AI experimentation is fragmented</li>
+            </ul>
+          </div>
+          <div>
+            <span class="sales-panel__label">Deliverables</span>
+            <ul class="sales-panel__list">
+              <li>Sales Process Blueprint</li><li>CRM Stage Architecture</li>
+              <li>CRM Data Dictionary</li><li>Workflow Automation Plan</li>
+              <li>AI Use-Case Roadmap</li><li>Management Dashboard</li>
+              <li>Sales SOP</li><li>Governance Model</li>
+              <li>Implementation Roadmap</li>
+            </ul>
+          </div>
+        </div>
+      </article>
+
+      <article class="sales-panel" id="sales-panel-7" role="tabpanel" aria-labelledby="sales-tab-7" tabindex="0" hidden>
+        <span class="sales-panel__kicker">07 / Strategic Accounts</span>
+        <h3>Strategic Account Growth, Retention &amp; Wallet-Share Program</h3>
+        <p class="sales-panel__lead">Companies invest heavily acquiring enterprise accounts and then manage them reactively.</p>
+        <div class="sales-panel__grid">
+          <div>
+            <span class="sales-panel__label">Common problems</span>
+            <ul class="sales-panel__list sales-panel__list--single">
+              <li>Single relationship</li><li>Low executive connectivity</li>
+              <li>Poor cross-selling</li><li>Renewal surprises</li>
+              <li>Limited account intelligence</li><li>Weak wallet penetration</li>
+            </ul>
+          </div>
+          <div>
+            <span class="sales-panel__label">Deliverables</span>
+            <ul class="sales-panel__list">
+              <li>Strategic Account Segmentation</li><li>Wallet-Share Analysis</li>
+              <li>Account Planning Framework</li><li>Stakeholder Mapping Templates</li>
+              <li>Executive Sponsorship Program</li><li>Retention Risk Dashboard</li>
+              <li>Renewal Governance</li><li>Cross-Sell Strategy</li>
+            </ul>
+          </div>
+        </div>
+      </article>
+
+      <article class="sales-panel" id="sales-panel-8" role="tabpanel" aria-labelledby="sales-tab-8" tabindex="0" hidden>
+        <span class="sales-panel__kicker">08 / Partnerships &amp; Channels</span>
+        <h3>Strategic Partnerships, Alliances &amp; Channel Ecosystem Development</h3>
+        <p class="sales-panel__lead">Client question: Should we build everything ourselves — or partner?</p>
+        <div class="sales-panel__grid">
+          <div>
+            <span class="sales-panel__label">Use case</span>
+            <p class="sales-panel__copy">Define where partnerships and channels can extend reach, improve the offer, or accelerate go-to-market execution.</p>
+          </div>
+          <div>
+            <span class="sales-panel__label">Deliverables</span>
+            <ul class="sales-panel__list">
+              <li>Partnership Strategy</li><li>Partner Landscape</li>
+              <li>Partner Prioritization Scorecard</li><li>Partner Value Proposition</li>
+              <li>Commercial Framework</li><li>Partner Operating Model</li>
+              <li>Joint GTM Playbook</li><li>Partner KPI Dashboard</li>
+            </ul>
+          </div>
+        </div>
+      </article>
+
+      <article class="sales-panel" id="sales-panel-9" role="tabpanel" aria-labelledby="sales-tab-9" tabindex="0" hidden>
+        <span class="sales-panel__kicker">09 / Revenue Governance</span>
+        <h3>Revenue Governance, Pipeline, Forecasting &amp; AOP Excellence</h3>
+        <p class="sales-panel__lead">Many CEOs hear, “The pipeline is ₹100 crore,” but still cannot tell what is genuinely qualified, what will close, or what pipeline is required for next year’s plan.</p>
+        <div class="sales-panel__grid">
+          <div>
+            <span class="sales-panel__label">Questions the system must answer</span>
+            <ul class="sales-panel__list sales-panel__list--single">
+              <li>How much is genuinely qualified?</li>
+              <li>What will close this quarter — and why?</li>
+              <li>What has changed since last week?</li>
+              <li>Which deals are slipping?</li>
+              <li>What pipeline is required for next year’s plan?</li>
+            </ul>
+          </div>
+          <div>
+            <span class="sales-panel__label">Deliverables</span>
+            <ul class="sales-panel__list">
+              <li>Revenue Operating Model</li><li>AOP Framework</li>
+              <li>Pipeline Architecture</li><li>Qualification Criteria</li>
+              <li>Forecasting Methodology</li><li>Management Dashboards</li>
+              <li>Sales Review Templates</li><li>Weekly/Monthly Governance Calendar</li>
+              <li>Manager Training</li>
+            </ul>
+          </div>
+        </div>
+      </article>
+    </div>
   </div>
 </section>
 
@@ -1169,6 +1645,53 @@ img { max-width: 100%; display: block; }
     revealEls.forEach(function (el) { io.observe(el); });
   } else {
     revealEls.forEach(function (el) { el.classList.add("is-visible"); });
+  }
+
+  /* ---------- Sales consulting tabs ---------- */
+  var salesTabs = document.querySelector("[data-sales-tabs]");
+
+  if (salesTabs) {
+    var salesTabButtons = Array.prototype.slice.call(salesTabs.querySelectorAll('[role="tab"]'));
+    var salesTabPanels = Array.prototype.slice.call(salesTabs.querySelectorAll('[role="tabpanel"]'));
+
+    function activateSalesTab(button, moveFocus) {
+      var targetId = button.getAttribute("aria-controls");
+
+      salesTabButtons.forEach(function (tab) {
+        var selected = tab === button;
+        tab.setAttribute("aria-selected", selected ? "true" : "false");
+        tab.setAttribute("tabindex", selected ? "0" : "-1");
+      });
+
+      salesTabPanels.forEach(function (panel) {
+        panel.hidden = panel.id !== targetId;
+      });
+
+      if (moveFocus) button.focus();
+
+      if (window.innerWidth <= 900) {
+        button.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "center" });
+      }
+    }
+
+    salesTabButtons.forEach(function (button, index) {
+      button.addEventListener("click", function () {
+        activateSalesTab(button, false);
+      });
+
+      button.addEventListener("keydown", function (event) {
+        var nextIndex = index;
+        if (event.key === "ArrowRight" || event.key === "ArrowDown") nextIndex = (index + 1) % salesTabButtons.length;
+        if (event.key === "ArrowLeft" || event.key === "ArrowUp") nextIndex = (index - 1 + salesTabButtons.length) % salesTabButtons.length;
+        if (event.key === "Home") nextIndex = 0;
+        if (event.key === "End") nextIndex = salesTabButtons.length - 1;
+
+        if (nextIndex !== index) {
+          event.preventDefault();
+          activateSalesTab(salesTabButtons[nextIndex], true);
+        }
+      });
+    });
   }
 
   /* ---------- Momentum line: draw + traveling dot ---------- */
