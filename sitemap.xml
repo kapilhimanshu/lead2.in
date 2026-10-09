@@ -4,3 +4,12 @@
     <loc>https://www.lead2.in/</loc>
   </url>
 </urlset>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TGCPMF875E"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-TGCPMF875E');
+</script>
